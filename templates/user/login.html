@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+    <h3 class="mb-4">Please login first!</h3>
+    <br>
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    <form action="{% url 'user:login' %}" method = "post">
+    {% csrf_token %}
+    {{ form.as_p}}
+
+    <button name="submit">Log in</button>
+    <input type="hidden" name="next" value="{% url 'core:home'%}">
+
+    </form>
+
+{% endblock %}

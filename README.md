@@ -48,10 +48,12 @@ project_tenwords
             |__ words.html
             |__ dashboard.html
         |-- user
+            |__ register.html
             |__ login.html
             |__ logout.html
             |__ profile.html
     |-- static
+    .gitignore
     
 
 ```
