@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Added
+    # third party
+    'crispy_forms',
     'tagulous',
+    # apps
     'core',
     'user',
 ]
@@ -130,3 +132,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

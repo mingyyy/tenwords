@@ -1,13 +1,15 @@
 {% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 
-<h3>Want to visualize how people think of you?
-    <span class="badge badge-light"><a href="{% url 'user:register' %}"><h2>JOIN US</h2></a></span>
-</h3>
+<div class="jumbotron text-center">
+  <h1>Visualize How People Think of You</h1>
+  <p><a href="{% url 'user:register' %}">JOIN</a> us today and start gather information!</p>
+</div>
 
-<form method="post" >
+<form method="post" class="uniForm" >
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
     <button type="submit">Submit</button>
 </form>
 

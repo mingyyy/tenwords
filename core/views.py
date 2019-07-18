@@ -19,7 +19,7 @@ def home(request):
                 messages.success(request, 'Thank you for your opinion!')
                 return redirect('core:result')
         else:
-            messages.error(request, 'You have entered a wrong code!')
+            messages.warning(request, 'You have entered a wrong code!')
 
     else:
         form = InputForm()
