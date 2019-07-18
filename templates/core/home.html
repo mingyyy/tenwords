@@ -1,9 +1,15 @@
-{% extends 'base.html' %}
-dfasdfasd
+{% extends 'core/base.html' %}
 {% block content %}
 
-<h1>Want to visualize how people think of you?
-    <span><a href="{% url 'user:register' %}"></a>JOIN US NOW!</span>
-</h1>
+<h3>Want to visualize how people think of you?
+    <span class="badge badge-light"><a href="{% url 'user:register' %}"><h2>JOIN US</h2></a></span>
+</h3>
 
+<form method="post" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<br><br>
 {% endblock %}

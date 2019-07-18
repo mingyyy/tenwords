@@ -26,7 +26,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">@</span>
           </div>
-          <input type="text" class="form-control" placeholder="Username">
+          <input type="text" class="form-control" placeholder="Unique UserID">
         </div>
       </form>
       <!-- Links -->
@@ -36,17 +36,21 @@
         </li>
 
         <!-- Dropdown -->
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown ">
+
+          {% if user.is_authenticated %}
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            User
+            {{ user.username }}
           </a>
-          {% if authenticated %}
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Personal</a>
                 <a class="dropdown-item" href="#">Circle</a>
                 <a class="dropdown-item" href="{% url 'user:logout' %}">Logout</a>
               </div>
           {% else %}
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown">
+            User
+          </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="{% url 'user:register' %}">Register</a>
                 <a class="dropdown-item" href="{% url 'user:login' %}">Login</a>
@@ -63,6 +67,7 @@
 
         {% endblock%}
     </div>
+
     <div class="container">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
             <foot style="color:white">Copyright @2019 MingY</foot>

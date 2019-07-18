@@ -1,10 +1,8 @@
 from django.contrib import admin
-from .models import Tag, Responder
+from .models import Responder
 
 
 class ResponderAdmin(admin.ModelAdmin):
-    list_display = ("user", "name", "email")
+    list_display = ("code", "age", "gender")
 
-
-admin.site.register(Tag)
 admin.site.register(Responder, ResponderAdmin)

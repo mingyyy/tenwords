@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<h3>
+    Thank you for your input! Here is the result!
+</h3>
+
+
+<ul>
+    {% for result in results %}
+        <li>
+            {{result.words}}
+        </li>
+    {% endfor %}
+</ul>
+
+<br><br>
+{% endblock %}
