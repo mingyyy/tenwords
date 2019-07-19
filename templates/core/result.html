@@ -1,18 +1,33 @@
 {% extends 'core/base.html' %}
+{% load static %}
 {% block content %}
+<style>
+    div.backImg
+    {
+    background-image:url('{% static "pic/charts.jpg"%}');
+    background-repeat:no-repeat;
+    background-size:100%;
+    }
+</style>
 
-<h3 class="mb-4">
-    The Collective Opinion:
-</h3>
-
-
-<ul>
+<div class="container backImg">
+    <div style="height:200px; background: transparent;">
+         <h1 class="mb-4 text-center" style="padding: 80px; color: yellow">
+            The Collective Opinion
+         </h1>
+    </div>
+</div>
+<br>
+<div class="container">
+    <ul>
     {% for result in results %}
         <li>
             {{result.words}}
         </li>
     {% endfor %}
-</ul>
+    </ul>
+
+</div>
 
 <br><br>
 {% endblock %}

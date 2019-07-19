@@ -1,13 +1,25 @@
 {% extends 'core/base.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
 {% block content %}
 
-<div class="jumbotron text-center">
+
+<style>
+    body.backImg
+{
+background-image:url('{% static "pic/words.jpg"%}');
+background-repeat:no-repeat;
+background-size:100%;
+}
+</style>
+<body class="backImg">
+<div class="jumbotron text-center" style="height:150px; background-color: #f0f0f0;">
   <h1>Visualize How People Think of You</h1>
-  <p><a href="{% url 'user:register' %}">JOIN</a> us today and start gather information!</p>
+  <p><a href="{% url 'user:register' %}">JOIN US</a> today and start gather information!</p>
 </div>
+</body>
+
 
 
 <br><br>
