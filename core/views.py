@@ -4,8 +4,12 @@ from .forms import InputForm
 from django.contrib import messages
 from .volcab import word_list
 
-# Create your views here.
+
 def home(request):
+    return render(request, 'core/home.html')
+
+
+def opinion(request):
     if request.method == "POST":
         form = InputForm(request.POST)
         # check if the code is related to a user
@@ -25,10 +29,10 @@ def home(request):
         form = InputForm()
 
     context = {'form': form, 'word_list': word_list}
-    return render(request, 'core/home.html', context)
+    return render(request, 'core/opinion.html', context)
 
 
 def result(request):
     results = Responder.objects.all()
-    context = {'results':results}
+    context = {'results': results}
     return render(request, 'core/result.html', context)

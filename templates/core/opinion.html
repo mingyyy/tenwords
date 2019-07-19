@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <h2>Your Perspective</h2>
+  <p>Not more than ten words to describe your perspective</p>
+  <img src="{% static 'pic/perspective.jpg' %}" class="mx-auto d-block rounded" alt="perspective" width="500" height="400">
+</div>
+
+<br>
+<!--<div class="container">-->
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-outline-secondary btn-block" data-toggle="modal" data-target="#myModal">
+    Positive Word List
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+
+        <div class="modal-header">
+          <h3 class="modal-title">List of Adjectives</h3>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <ul class="nada">
+                {% for key, value in word_list.items %}
+                    <li>
+                        <h5 id="list_title">
+                            {{ key }}
+                        </h5>
+                        {{ value }}
+                    </li>
+                    <br>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<!--</div>-->
+
+
+<form method="post" class="uniForm" >
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Submit</button>
+</form>
+
+<br><br>
+{% endblock %}

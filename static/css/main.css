@@ -1,6 +1,14 @@
+h1 {
+    font: 6px futura, blue;
+}
+
+ul.nada {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 #list_title {
     text-align: center;
-    color: red;
-    background-color: lightblue;
     border-bottom: 1px solid lightgrey;
 }
