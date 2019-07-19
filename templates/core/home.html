@@ -1,11 +1,57 @@
 {% extends 'core/base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 {% block content %}
 
 <div class="jumbotron text-center">
   <h1>Visualize How People Think of You</h1>
   <p><a href="{% url 'user:register' %}">JOIN</a> us today and start gather information!</p>
 </div>
+
+<!--<div class="container">-->
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-outline-secondary btn-block" data-toggle="modal" data-target="#myModal">
+    Positive Word List
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <!--<div class="modal-header">-->
+          <!--<h4 class="modal-title">Word List</h4>-->
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+        <!--</div>-->
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <ul>
+                {% for key, value in word_list.items %}
+                    <li>
+                        <p id="list_title">
+                            {{ key }}:
+                        </p>
+                        {{ value }}
+                    </li>
+                    <br>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<!--</div>-->
+
 
 <form method="post" class="uniForm" >
     {% csrf_token %}

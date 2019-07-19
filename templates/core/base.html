@@ -16,6 +16,11 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="shortcut icon" href="{% static 'pic/favicon.ico' %}">
+
 </head>
 <body>
 
@@ -63,7 +68,6 @@
     </nav>
     <br>
 
-
     <div class="container">
         {% if messages %}
             {% for message in messages%}
@@ -86,7 +90,7 @@
             {% block footer%}
             {% endblock%}
         </nav>
-
     </div>
+
 </body>
 </html>

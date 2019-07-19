@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Responder, User
 from .forms import InputForm
 from django.contrib import messages
-
+from .volcab import word_list
 
 # Create your views here.
 def home(request):
@@ -24,7 +24,7 @@ def home(request):
     else:
         form = InputForm()
 
-    context = {'form': form}
+    context = {'form': form, 'word_list': word_list}
     return render(request, 'core/home.html', context)
 
 
