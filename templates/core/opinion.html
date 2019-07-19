@@ -3,10 +3,21 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-  <h2>Your Perspective</h2>
-  <p>Not more than ten words to describe your perspective</p>
-  <img src="{% static 'pic/perspective.jpg' %}" class="mx-auto d-block rounded" alt="perspective" width="500" height="400">
+<style>
+    div.backImg
+{
+background-image:url('{% static "pic/perspective.jpg"%}');
+background-repeat:no-repeat;
+background-size:100%;
+}
+</style>
+
+<div class="container backImg" >
+    <div style="height:532px; background: transparent;">
+      <h2 style="color: yellow">Your Perspective Matters</h2>
+      <p style="color: yellow">Input no more than ten words</p>
+      <!--<img src="{% static 'pic/perspective.jpg' %}" class="mx-auto d-block rounded" alt="perspective" width="500" height="400">-->
+    </div>
 </div>
 
 <br>
