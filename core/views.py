@@ -36,3 +36,7 @@ def result(request):
     results = Responder.objects.all()
     context = {'results': results}
     return render(request, 'core/result.html', context)
+
+
+def NLP(words):
+    pass
